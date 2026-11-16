@@ -14,7 +14,7 @@
 - **Instalación:** `sudo apt install gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu qemu-system-riscv gdb-multiarch build-essential git`. La primera vez falló con errores 404 por una lista de paquetes desactualizada; se resolvió con `sudo apt update` y reintentando con `--fix-missing`.
 
 ![Sistema operativo y commit](img/P1.png)
-![Versiones de las herramientas](img/P2.png)
+![Versiones de las herramientas](img/P9.png)
 
 ## 2. Compilación y ejecución
 
@@ -22,8 +22,8 @@
 - **Una sola CPU virtual:** la línea de `qemu-system-riscv64` que imprime `make` incluye `-smp 1`. También se verificó sin ejecutar con `make -n qemu CPUS=1`, que muestra la misma opción.
 - **XV6 operativo:** el sistema arranca (`xv6 kernel is booting`, `init: starting sh`), y los comandos `ls` y `cat README` funcionan y muestran la lista de archivos y el contenido del README.
 
-![XV6 con ls y cat README](img/P3.png)
-![Comando de qemu con -smp 1](img/P5.png)
+![XV6 con ls y cat README](img/P15.png)
+![Comando de qemu con -smp 1](img/P11.png)
 
 ## 3. Planificador original
 
@@ -41,7 +41,7 @@ Las letras salen intercaladas: ningún proceso termina antes de que los otros av
 
 El orden no es un `A B C` perfecto (hay repeticiones como `A A` o `B B`, y la primera letra es B). Posibles causas: el tick del temporizador cae en un punto arbitrario del bucle de cálculo de cada hijo, por lo que un proceso puede completar su impresión justo antes o después de la interrupción; además, los hijos se crean uno tras otro con `fork()` y su avance depende del momento exacto de cada interrupción. Esto no contradice Round Robin: los tres procesos siguen turnándose, solo que la duración efectiva de cada turno varía respecto de las impresiones.
 
-![Salida de rrtest](img/P5.png)
+![Salida de rrtest](img/P11.png)
 
 ### 3.2 Dónde se elige el siguiente proceso
 
