@@ -23,7 +23,7 @@
 - **XV6 operativo:** el sistema arranca (`xv6 kernel is booting`, `init: starting sh`), y los comandos `ls` y `cat README` funcionan y muestran la lista de archivos y el contenido del README.
 
 ![XV6 con ls y cat README](img/P3.png)
-![Comando de qemu con -smp 1](img/P4.png)
+![Comando de qemu con -smp 1](img/P5.png)
 
 ## 3. Planificador original
 
